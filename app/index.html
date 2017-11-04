@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MessagingService</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MessageBoard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> {{content-for "head"}}
+  <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+  <link rel="stylesheet" href="{{rootURL}}assets/message-board.css"> {{content-for "head-footer"}}
+</head>
 
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/messaging-service.css">
+<body>
+  {{content-for "body"}}
+  <script src="{{rootURL}}assets/vendor.js"></script>
+  <script src="{{rootURL}}assets/message-board.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script>
+  var config = {
+    apiKey: "AIzaSyD6-vOYGAOp3eY_nPm2SYJBH8ePBEDKNlM",
+    authDomain: "message-board-34cd1.firebaseapp.com",
+    databaseURL: "https://message-board-34cd1.firebaseio.com",
+    projectId: "message-board-34cd1",
+    storageBucket: "message-board-34cd1.appspot.com",
+    messagingSenderId: "703727816140",
+  };
+  firebase.initializeApp(config);
 
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
+  </script>
+  {{content-for "body-footer"}}
+</body>
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/messaging-service.js"></script>
-
-    {{content-for "body-footer"}}
-  </body>
 </html>
